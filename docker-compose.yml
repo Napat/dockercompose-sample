@@ -1,0 +1,17 @@
+
+version: "2"
+services:
+
+#  busybox-official:
+#    image: busybox:latest
+#    #restart: always
+#    command: echo "abcdefg"
+
+  ubuntu-nettool:
+    build: ./build/ubuntu-nettool
+    volumes:
+      - ./src/:/tmp
+    #restart: always
+    environment:
+      - SLEEP_SH='while true; do sleep 60; done'
+    #command: top
